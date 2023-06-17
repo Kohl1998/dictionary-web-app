@@ -87,3 +87,27 @@ input:checked+.slider:before {
     height: 24px;
     width: 24px;
 }
+
+#mainContent {
+    background-color: #fff;
+    /* centers div */
+    margin: auto;
+    margin-top: 20px;
+    width: 100vh;
+    height: 800px;
+}
+
+#inputField {
+display: flex;
+justify-content: space-between;
+}
+
+/* to place icon in input box */
+#searchIcon {
+    margin-top: 8px;
+    margin-left: -22px;
+}
+
+input.input-box, textarea {
+    background-color: #fafafa;
+}
