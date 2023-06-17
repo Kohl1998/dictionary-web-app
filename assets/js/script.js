@@ -7,7 +7,8 @@ let img = $('#moonIcon')
 // Input field
 let inputField = $('#inputField')
 
-
+// To hold api response
+let results = []
 
 
 // Function to change image src once toggle button is clicked
@@ -28,6 +29,22 @@ inputField.on('keypress', function(e) {
         title.addClass('inputMargin')
         root.append(title)}
     })
+    
+    // Function to toggle between Google fonts
+    $('#font').change(function() {
+        // to show users option from dropdown
+        let value = $(this).val()
+        alert(`You have selected ${value}`)
+        $('body').css({"font-family": value})
+    })
 
 let result = $('#apiResponse')
-const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+
+/* function searchWord() {
+    const word = $('#search').val()
+    const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+    $.ajax({
+        method: "GET",
+        url: url,
+    })
+} */
