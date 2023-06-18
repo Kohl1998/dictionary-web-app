@@ -14,13 +14,15 @@ let result = []
 toggle.on('click', function () {
     img.attr('src', 'assets/images/crescent-moon-svgrepo-dark.svg')
     $('body').css({ "background-color": "black" })
-    $('#mainContent').css({ "background-color": "black", "color": "white" })
+    $('#mainContent').css({ "background-color": "white", "color": "black" })
     console.log(input)
 })
 
 
 inputField.on('keypress', function (e) {
+    // Checks if user hit enter button
     if (e.which == 13) {
+        e.preventDefault()
         var userValue = $('#search').val()
         console.log(userValue)
         let root = $('#root')
@@ -36,7 +38,25 @@ inputField.on('keypress', function (e) {
         method: "GET",
         dataType: 'json',
         success: function (response) {
-            console.log(response[0].license)
+            console.log(response[0].sourceUrls)
+            let root = $('#root')
+            let phonetic = $('<h5>').text(response[0].phonetic).css({'color': 'purple'})
+            let noun = $('<h5>').text(response[0].meanings[1].partOfSpeech).css({'color': 'black', 'margin': '20px'})
+            let meaning = $('<h5>').text('Meaning').css({'color': 'black', 'margin-top': '30px'})
+            // Definitions
+            let listOne = $('<li>').text(response[0].meanings[1].definitions[0].definition)
+            let listTwo = $('<li>').text(response[0].meanings[1].definitions[1].definition)
+            // Synonyms
+            let synonym = $('<h5>').text('Synonyms').css({'color': 'purple', 'margin-top': '30px'})
+            let synonymDefinition = $('<h5>').text(response[0].meanings[0].synonyms[0]) 
+            // verbs
+            let verb = $('<h5>').text('Verb').css({'margin-top': '30px'})
+            let verbMeaning = $('<h5>').text('Meaning').css({'color': 'black', 'margin-top': '30px'})
+            let verbList = $('<li>').text(response[0].meanings[1].definitions[0].definition)
+            // Source
+            let source = $('<h6>').text('Source').css({'color': 'black', 'margin-top': '20px'})
+            let src = $('<a>').text(response[0].sourceUrls).css({'color': 'blue'})
+            root.append(phonetic, noun, meaning, listOne, listTwo, synonym, synonymDefinition, verb, verbMeaning, verbList, source, src)
         },
         error: function (error) {
             console.log(error)
@@ -56,7 +76,7 @@ $('#font').change(function () {
     $('body').css({ "font-family": value })
 })
 
-// Empties search content
+// Empties search content once user clicks dictionary icon
 let reset = $('#reset').on('click', function () {
     $('#search').val('')
     let root = $('#root')
