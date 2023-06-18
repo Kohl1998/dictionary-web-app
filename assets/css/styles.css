@@ -132,3 +132,22 @@ input.input-box, textarea {
     margin-top: 30px;
 }
 
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafafa;
+    height: 100px;
+    margin-top: 20px;
+}
+
+#footer a {
+    text-decoration: none;
+    font-size: 18px;
+}
+
+svg {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
