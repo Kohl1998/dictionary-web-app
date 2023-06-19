@@ -21,7 +21,7 @@ toggle.on('click', function () {
 
 inputField.on('keypress', function (e) {
     // Checks if user hit enter button
-    if (e.which == 13) {
+    if (e.which == 13 && userValue !== '') {
         e.preventDefault()
         var userValue = $('#search').val()
         console.log(userValue)
@@ -60,6 +60,15 @@ inputField.on('keypress', function (e) {
         },
         error: function (error) {
             console.log(error)
+            let root = $('#root')
+            let errorMessage = $('<h5>').text('Word not available!').css({'color': 'red'})
+            root.append(errorMessage)
+            // Clears input after 3 secs if word not found 
+            setTimeout(() => {
+                $('#search').val('')
+                let root = $('#root')
+                root.empty()
+            }, 3000);
             // plays audio if error in GET request
             $('audio#pop')[0].play()
         }

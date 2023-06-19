@@ -103,6 +103,7 @@ input [type=search] {
 #mainContent {
     background-color: #fff;
     /* centers div */
+    padding: 20px;
     margin: auto;
     margin-top: 20px;
     width: 100vh;
