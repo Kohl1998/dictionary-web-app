@@ -55,7 +55,7 @@ inputField.on('keypress', function (e) {
             let verbList = $('<li>').text(response[0].meanings[1].definitions[0].definition)
             // Source
             let source = $('<h6>').text('Source').css({'color': 'black', 'margin-top': '20px'})
-            let src = $('<a>').text(response[0].sourceUrls).css({'color': 'blue'})
+            let src = $('<a>').text(response[0].sourceUrls).attr('href', response[0].sourceUrls, 'target', '_blank').css({'color': 'blue'})
             root.append(phonetic, noun, meaning, listOne, listTwo, synonym, synonymDefinition, verb, verbMeaning, verbList, source, src)
         },
         error: function (error) {
@@ -90,5 +90,7 @@ let reset = $('#reset').on('click', function () {
     $('#search').val('')
     let root = $('#root')
     root.empty()
+    $('body').css({ "background-color": "white" })
+    $('#mainContent').css({ "background-color": "white", "color": "black" })
 })
 
