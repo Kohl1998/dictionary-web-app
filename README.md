@@ -13,11 +13,7 @@ To install this project you can clone the repo to your local macine, and use the
 
 ## Screenshot
 
-[![bjj2.png](https://i.postimg.cc/GmTddgKf/bjj2.png)](https://postimg.cc/nXx61k6K)
-
-[![bjj3.png](https://i.postimg.cc/XY5STG7S/bjj3.png)](https://postimg.cc/w19GNBm0)
-
-[![bjj4.png](https://i.postimg.cc/0QWB6P20/bjj4.png)](https://postimg.cc/PpD49GDC)
+[![Dictionary-web-app-screenshot-github.png](https://i.postimg.cc/br0NwxQ1/Dictionary-web-app-screenshot-github.png)](https://postimg.cc/XBJ02y1v)
 
 ## Credits
 
