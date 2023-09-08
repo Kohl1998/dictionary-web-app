@@ -17,7 +17,7 @@ To install this project you can clone the repo to your local macine, and use the
 
 ## Credits
 
-I used 'Post Images' for support - https://postimages.org/
+I used 'Post Images' for support - https://postimages.org/ <br>
 I used 'Frontend Mentor' to challenge myself - https://www.frontendmentor.io/challenges 
 
 ## License
